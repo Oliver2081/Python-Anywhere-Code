@@ -5,17 +5,15 @@ from flask import render_template, Flask, abort, requests
 
 app = Flask(__name__)
 
-@app.route('/webhook', methods=['POST'])
+@app.route('/update_server', methods=['POST'])
     def webhook():
         if request.method == 'POST':
-            repo = git.Repo('./myproject')
+            repo = git.Repo('https://github.com/Oliver2081/Geography-Website.git')
             origin = repo.remotes.origin
-            repo.create_head('master', 
-        origin.refs.master).set_tracking_branch(origin.refs.master).checkout()
-            origin.pull()
-            return '', 200
+origin.pull()
+return 'Updated PythonAnywhere successfully', 200
         else:
-            return '', 400
+            return 'Wrong event type', 400
 
 @app.route("/")
 def index():
@@ -49,4 +47,5 @@ def renderPage(pageId):
 @app.errorhandler(404)
 def pageNotfound(error):
     return render_template('404.html'), 404
+
 

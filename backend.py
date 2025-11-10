@@ -1,6 +1,6 @@
 import os
 import json
-import gut
+import git
 from flask import render_template, Flask, abort, requests
 
 app = Flask(__name__)
@@ -49,3 +49,4 @@ def renderPage(pageId):
 @app.errorhandler(404)
 def pageNotfound(error):
     return render_template('404.html'), 404
+

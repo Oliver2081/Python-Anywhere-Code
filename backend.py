@@ -4,6 +4,7 @@ import git
 from flask import render_template, Flask, abort, requests
 
 app = Flask(__name__)
+DATAPATH = /home/o2081/website/data
 
 @app.route('/update_server', methods=['POST'])
     def webhook():
@@ -22,14 +23,14 @@ def index():
 @app.route("/<pageId>")
 def renderPage(pageId):
     validPages = []
-    availablePages = os.listdir("./data")
+    availablePages = os.listdir(DATAPATH)
     
     for page in availablePages:
         if page[-5:] == ".json":
             validPages.append(page[:-5])
 
     if pageId in validPages:
-        with open(f"./data/{pageId}.json", "r") as f:
+        with open(f"({DATAPATH}/{pageId}.json", "r") as f:
             pageData = json.load(f)
 
             TITLE = pageData.get("title")
@@ -47,5 +48,6 @@ def renderPage(pageId):
 @app.errorhandler(404)
 def pageNotfound(error):
     return render_template('404.html'), 404
+
 
 

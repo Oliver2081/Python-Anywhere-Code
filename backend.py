@@ -9,7 +9,7 @@ DATAPATH = '/home/o2081/website/data'
 @app.route('/update_server', methods=['POST'])
 def webhook():
     if request.method == 'POST':
-        repo = git.Repo('https://github.com/Oliver2081/Geography-Website.git')
+        repo = git.Repo('/home/o2081/website')
         origin = repo.remotes.origin
         origin.pull()
         return 'Updated PythonAnywhere successfully', 200
@@ -48,6 +48,7 @@ def renderPage(pageId):
 @app.errorhandler(404)
 def pageNotfound(error):
     return render_template('404.html'), 404
+
 
 
 

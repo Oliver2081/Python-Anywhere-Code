@@ -56,8 +56,8 @@ def webhook():
             print('Deploy payload is empty: {payload}'.format(payload=payload))
             abort(abort_code)
 
-        if payload['ref'] != 'refs/heads/master':
-            return json.dumps({'msg': 'Not master; ignoring'})
+        if payload['ref'] != 'refs/heads/main':
+            return json.dumps({'msg': 'Not main; ignoring'})
             
         repo = git.Repo('/home/o2081/website')
         origin = repo.remotes.origin
@@ -111,4 +111,5 @@ def renderPage(pageId):
 def pageNotfound(error):
     return render_template('404.html'), 404
     
+
 

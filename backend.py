@@ -20,7 +20,7 @@ def webhook():
 def index():
     return render_template("index.html")
 
-@app.route("health")
+@app.route("/health")
 def health():
     return "OK", 200
     
@@ -52,6 +52,7 @@ def renderPage(pageId):
 @app.errorhandler(404)
 def pageNotfound(error):
     return render_template('404.html'), 404
+
 
 
 

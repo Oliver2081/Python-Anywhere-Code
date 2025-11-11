@@ -1,0 +1,26 @@
+{
+    "title": "Uk Physical Landscapes",
+    "specRef": "3.3.1",
+    "sections": [
+        {
+            "title": "Coastal Processes",
+            "content": [
+                {
+                    "style": "h3",
+                    "data": "Constructive and Destructive Waves"
+                },
+                {
+                    "style": "rowtable",
+                    "data": {
+                        "headers": ["Wave Type", "Properties"],
+                        "rows": [
+                            [
+                                "Constructive",
+                                "• Strong Swash\n• Weak Backwash"
+                            ]
+                          }
+                }
+            ]
+        }
+    ]
+}

@@ -6,12 +6,15 @@
             "title": "Wave Types",
             "content": [
                 {
+                    "style": "p",
+                    "data": "There are two different types of wave - constructive and destructive. They can affect the coastline in different ways. When a wave reaches the shore, the water that rushes up the beach is known as the swash. The water that flows back towards the sea is known as the backwash. The energy of the swash and backwash determine the type of wave."
+                {
                     "style": "h2",
                     "data": "Destructive Waves"
                 },
                 {
                     "style": "ul",
-                    "data": "• Weak Swash\n• Strong Backwash"
+                    "data": "Weak Swash\nStrong Backwash"
                 }
             ]
         }

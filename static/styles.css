@@ -189,8 +189,9 @@ nav a:hover,
 /* --- Desktop: ensure hamburger hidden on larger screens --- */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 18px;   /* Smaller font on mobile */
+        font-size: 15px;   /* Smaller font on mobile */
     }
 }
+
 
 

@@ -21,9 +21,11 @@ header {
 header h1 {
     font-size: 24px;
     margin: 0;
-    flex: 1 1 auto;        /* Allow it to shrink */
-    min-width: 0;          /* Important for text truncation */
-    word-wrap: break-word; /* Wrap long text */
+    flex: 1 1 auto;       /* Allow shrinking */
+    min-width: 0;         /* Allow it to shrink below intrinsic width */
+    overflow: hidden;     /* Prevent overflow */
+    text-overflow: ellipsis; /* Show "..." if it’s too long */
+    white-space: nowrap;      /* Keep it on one line */
 }
 
 h2 {
@@ -190,4 +192,5 @@ nav a:hover,
         font-size: 18px;   /* Smaller font on mobile */
     }
 }
+
 

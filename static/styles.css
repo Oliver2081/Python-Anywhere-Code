@@ -157,7 +157,7 @@ nav a:hover,
     .nav-links {
         display: none;
         flex-direction: column;
-        width: 100%;
+        width: 96%;
         background-color: #222831;
         margin-top: 10px;
         border-top: 1px solid #333;
@@ -186,4 +186,5 @@ nav a:hover,
         display: none;
     }
         }
+
 

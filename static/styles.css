@@ -189,7 +189,7 @@ nav a:hover,
 /* --- Desktop: ensure hamburger hidden on larger screens --- */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 18px;   /* Smaller font on mobile */
+        font-size: 22px;   /* Smaller font on mobile */
     }
     nav a .dropdown button {
         font-size: 8px;
@@ -198,9 +198,11 @@ nav a:hover,
         display: flex;
         align-items: center;
         gap: 0px;
+        margin: 0px;
     }
     
 }
+
 
 
 

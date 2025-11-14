@@ -200,8 +200,12 @@ nav a:hover,
         gap: 0px;
         margin: 0px;
     }
+    .nav-links {
+        gap: 5px;
+    }
     
 }
+
 
 
 

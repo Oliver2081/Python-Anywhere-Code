@@ -1,108 +1,189 @@
-/* Global styles */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    color: #EEEEEE;
+    background-color: #393E46;
 }
 
+/* --- Header and Title Bar --- */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 0.5rem;
+    background-color: #222831;
+    color: white;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    margin: 0;
 }
 
-.logoTitle {
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+h2 {
+    margin: 5px;
+}
+
+.box {
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300%;
+    width: 96vw;
+    margin: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #333;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #222831;
+    color: white;
+}
+
+/* --- Navigation --- */
+nav {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
-.logo {
-    width: 50px;
-    margin-right: 0.5rem;
-}
-
-header h1 {
-    font-size: 1.5rem;
-}
-
-/* ---------- IMPORTANT CHANGE BELOW ---------- */
-.hamburger {
-    display: flex !important;   /* FORCE ALWAYS VISIBLE */
-}
-/* -------------------------------------------- */
-
-.hamburger {
-    flex-direction: column;
+nav a,
+.dropdown button {
+    color: white;
+    background: none;
+    border: none;
+    text-decoration: none;
+    margin: 0 10px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
     cursor: pointer;
 }
 
-.hamburger span {
-    background-color: #fff;
-    height: 3px;
-    width: 25px;
-    margin: 4px 0;
+nav a:hover,
+.dropdown button:hover {
+    text-decoration: underline;
+}
+
+/* --- Dropdowns --- */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
     display: block;
 }
 
-nav {
+.dropdown-content a:hover {
+    background-color: #444;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* --- Hamburger Button --- */
+/* keep original default (hidden on desktop) */
+.hamburger {
     display: none;
-    width: 100%;
     flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
 }
 
-nav a {
-    color: #fff;
-    padding: 0.5rem 0;
-    text-align: center;
-    border-top: 1px solid #555;
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
 }
 
-nav.active {
+/* Force hamburger to show when nav would be hidden (small screens).
+   This line is minimal and will be overridden on desktop by the media query below. */
+.hamburger.force-visible {
+    display: flex !important;
+}
+
+/* --- Nav Links Container --- */
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nav-links.active {
     display: flex;
 }
 
-/* Desktop Styles */
-@media (min-width: 768px) {
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* show hamburger on small screens */
     .hamburger {
-        display: none !important; /* Hide hamburger on desktop */
-    }
-
-    nav {
         display: flex;
-        flex-direction: row;
-        width: auto;
     }
 
-    nav a {
-        border: none;
-        padding: 0 1rem;
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #222831;
+        margin-top: 10px;
+        border-top: 1px solid #333;
+        padding-top: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: static;
+        background-color: #333;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .dropdown-content a {
+        padding-left: 20px;
     }
 }
 
-/* Main content */
-main {
-    padding: 1rem;
-}
-
-main h2 {
-    margin-bottom: 1rem;
-}
-
-main ul {
-    list-style: disc;
-    padding-left: 1.5rem;
-}
-
-main ul li {
-    margin-bottom: 0.5rem;
-}
+/* --- Desktop: ensure hamburger hidden on larger screens --- */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+        }

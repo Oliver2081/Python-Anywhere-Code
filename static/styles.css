@@ -188,31 +188,55 @@ nav a:hover,
 
 /* --- Desktop: ensure hamburger hidden on larger screens --- */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px; /* reduce vertical spacing */
+    }
+
     header h1 {
-        font-size: 22px;   /* Smaller font on mobile */
-        padding: 5px 10px;
+        font-size: 18px; /* smaller font */
+        margin: 0;
+        flex: 1 1 100%;   /* take full width */
+        white-space: normal;  /* allow wrapping */
+        word-break: break-word;
     }
-    nav a .dropdown button {
-        font-size: 8px;
-    }
-    nav {
+
+    .hamburger {
         display: flex;
-        align-items: center;
-        gap: 0px;
-        margin: 0px;
+        margin-left: 0;
     }
+
     .nav-links {
-        gap: 5px;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #222831;
+        margin-top: 5px;
+        border-top: 1px solid #333;
+        padding-top: 5px;
+        gap: 5px; /* reduce spacing between items */
     }
-    
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    nav a, .dropdown button {
+        font-size: 14px; /* slightly smaller if needed */
+        margin: 0;
+        padding: 5px 0;
+        word-break: break-word; /* allow long text to wrap */
+    }
+
+    .dropdown-content {
+        position: static;
+        background-color: #333;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .dropdown-content a {
+        padding-left: 20px;
+    }
 }
-
-
-
-
-
-
-
-
-
-

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Styles (Flask static link) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
 
@@ -57,7 +57,7 @@
         <button id="contactButton">Contact Us</button>
     </section>
 
-    <!-- JS -->
-    <script src="script.js"></script>
+    <!-- JS (Flask static link) -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

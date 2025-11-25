@@ -88,36 +88,12 @@ def index():
 @app.route("/health")
 def health():
     return render_template("health.html", time=datetime.utcnow().strftime("%d %B %Y %H:%M:%S"))
-    
-@app.route("/<pageId>")
-def renderPage(pageId):
-    validPages = []
-    availablePages = os.listdir(DATAPATH)
-    
-    for page in availablePages:
-        if page.endswith(".json"):
-            validPages.append(page[:-5])
-
-    if pageId in validPages:
-        with open(f"{DATAPATH}/{pageId}.json", "r") as f:
-            pageData = json.load(f)
-
-            TITLE = pageData.get("title")
-            SPECREF = pageData.get("specRef")
-            SECTIONS = []
-            
-            for section in pageData.get("sections", []):
-                SECTIONS.append(section)
-
-        return render_template("page.html", title=TITLE, specRef=SPECREF, sections=SECTIONS)
-    
-    else:
-        return render_template("404.html"), 404
 
 @app.errorhandler(404)
 def pageNotfound(error):
     return render_template('404.html'), 404
     
+
 
 
 

@@ -1,2 +1,5 @@
-# Python Anywhere Integration # 
-Remember to check for errors to avoid having to log onto python anywhere and git pull to fix
+# Website Repo #
+## Steps to commit ##
+1. Check for bugs in the backend!
+2. Make sure that the pages are valid (Doesnt require backend reload)
+3. Press commit

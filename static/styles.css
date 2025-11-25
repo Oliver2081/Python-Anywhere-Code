@@ -1,71 +1,110 @@
+/* General Page Styling */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    color: #EEEEEE;
-    background-color: #393E46;
+    padding: 0;
+    background: #0e0e0f;
+    colour: #eaeaea;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* --- Header and Title Bar --- */
-header {
-    background-color: #222831;
-    color: white;
-    padding: 10px 20px;
+/* Title Bar */
+#titleBar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    align-items: centre;
+    padding: 20px 40px;
+    background: #141416;
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.titleContainer h1 {
     margin: 0;
-    gap: 10px;
+    font-size: 28px;
+    font-weight: 600;
 }
 
-header h1 {
-    font-size: 24px;
-    margin: 0;
-    flex: 1 1 auto;       /* Allow shrinking */
-    min-width: 0;         /* Allow it to shrink below intrinsic width */
-    overflow: hidden;     /* Prevent overflow */
-    text-overflow: ellipsis; /* Show "..." if it’s too long */
-    white-space: nowrap;      /* Keep it on one line */
+.navLinks a {
+    margin-left: 25px;
+    text-decoration: none;
+    colour: #eaeaea;
+    font-weight: 500;
+    transition: colour 0.3s ease;
 }
 
-h2 {
-    margin: 5px;
+.navLinks a:hover {
+    colour: #4da6ff;
 }
 
-.box {
-    border: 2px solid #333;
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 96%;
-    margin: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.data-table {
-    width: 98%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-.data-table th, .data-table td {
-    border: 1px solid #333;
-    padding: 8px 12px;
-    text-align: left;
-}
-
-.data-table th {
-    background-color: #222831;
-    color: white;
-}
-
-/* --- Navigation --- */
-nav {
+/* Hero Section */
+.heroSection {
+    height: 90vh;
     display: flex;
-    align-items: center;
-    gap: 10px;
+    justify-content: centre;
+    align-items: centre;
+    background: linear-gradient(145deg, #0e0e0f 0%, #1b1c1f 100%);
+    text-align: centre;
+    padding: 0 20px;
 }
 
-nav a,
+.heroSection h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.heroSection p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    colour: #bcbcbc;
+}
+
+#ctaButton {
+    padding: 12px 28px;
+    font-size: 16px;
+    background: #4da6ff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+#ctaButton:hover {
+    opacity: 0.8;
+}
+
+/* Info Sections */
+.infoSection {
+    padding: 80px 40px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.infoSection h3 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.infoSection p,
+.infoSection li {
+    font-size: 18px;
+    colour: #c8c8c8;
+}
+
+/* Buttons */
+#contactButton {
+    padding: 10px 24px;
+    background: #4da6ff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+#contactButton:hover {
+    opacity: 0.8;
+}
 .dropdown button {
     color: white;
     background: none;
@@ -147,4 +186,5 @@ nav a:hover,
 .nav-links.active {
     display: flex;
 }
+
 

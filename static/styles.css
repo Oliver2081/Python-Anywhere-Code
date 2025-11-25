@@ -1,190 +1,151 @@
-/* General Page Styling */
-body {
-    margin: 0;
-    padding: 0;
-    background: #0e0e0f;
-    colour: #eaeaea;
-    font-family: Arial, Helvetica, sans-serif;
+/* ========== GLOBAL ========== */
+:root {
+    --bg-dark: #0d0d0f;
+    --bg-light: #18181b;
+    --text-main: #e5e5e5;
+    --text-muted: #b3b3b3;
+    --accent: #4da6ff;
+    --accent-hover: #74c0ff;
 }
 
-/* Title Bar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-dark);
+    colour: var(--text-main);
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+/* ========== HEADER / TITLE BAR ========== */
 #titleBar {
+    width: 100%;
+    background: rgba(24, 24, 27, 0.75);
+    backdrop-filter: blur(10px);
+    padding: 18px 40px;
     display: flex;
     justify-content: space-between;
     align-items: centre;
-    padding: 20px 40px;
-    background: #141416;
-    border-bottom: 1px solid #222;
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid #222;
 }
 
-.titleContainer h1 {
-    margin: 0;
-    font-size: 28px;
-    font-weight: 600;
+#siteTitle {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -1px;
 }
 
+/* NAV LINKS */
 .navLinks a {
-    margin-left: 25px;
     text-decoration: none;
-    colour: #eaeaea;
-    font-weight: 500;
+    colour: var(--text-main);
+    font-size: 18px;
+    margin-left: 32px;
+    position: relative;
     transition: colour 0.3s ease;
 }
 
-.navLinks a:hover {
-    colour: #4da6ff;
+.navLinks a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
 }
 
-/* Hero Section */
+.navLinks a:hover {
+    colour: var(--accent);
+}
+
+.navLinks a:hover::after {
+    width: 100%;
+}
+
+/* ========== HERO SECTION ========== */
 .heroSection {
     height: 90vh;
     display: flex;
     justify-content: centre;
     align-items: centre;
-    background: linear-gradient(145deg, #0e0e0f 0%, #1b1c1f 100%);
     text-align: centre;
     padding: 0 20px;
+    background: radial-gradient(circle at top, #1a1a1d 0%, #0d0d0f 70%);
 }
 
-.heroSection h2 {
-    font-size: 48px;
-    margin-bottom: 10px;
+.heroContent h2 {
+    font-size: 62px;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
-.heroSection p {
-    font-size: 18px;
-    margin-bottom: 25px;
-    colour: #bcbcbc;
+.heroContent p {
+    font-size: 22px;
+    colour: var(--text-muted);
+    margin-bottom: 35px;
 }
 
-#ctaButton {
-    padding: 12px 28px;
-    font-size: 16px;
-    background: #4da6ff;
+/* Buttons */
+button {
+    background: var(--accent);
     border: none;
-    border-radius: 6px;
+    padding: 14px 34px;
+    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: opacity 0.3s ease;
+    font-weight: 600;
+    transition: background 0.25s ease, transform 0.2s ease;
 }
 
-#ctaButton:hover {
-    opacity: 0.8;
+button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
 }
 
-/* Info Sections */
+button:active {
+    transform: translateY(0px);
+}
+
+/* ========== INFO SECTIONS ========== */
 .infoSection {
-    padding: 80px 40px;
     max-width: 900px;
-    margin: auto;
+    margin: 100px auto;
+    padding: 0 40px;
+    text-align: centre;
 }
 
 .infoSection h3 {
-    font-size: 32px;
-    margin-bottom: 15px;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .infoSection p,
 .infoSection li {
-    font-size: 18px;
-    colour: #c8c8c8;
+    font-size: 19px;
+    colour: var(--text-muted);
 }
 
-/* Buttons */
-#contactButton {
-    padding: 10px 24px;
-    background: #4da6ff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
+.infoSection ul {
+    list-style: none;
+    margin-top: 15px;
 }
 
-#contactButton:hover {
-    opacity: 0.8;
-}
-.dropdown button {
-    color: white;
-    background: none;
-    border: none;
-    text-decoration: none;
-    margin: 0 10px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
+.infoSection li {
+    padding: 10px 0;
 }
 
-nav a:hover,
-.dropdown button:hover {
-    text-decoration: underline;
+/* More spacing for the last section */
+#contact {
+    padding-bottom: 140px;
 }
-
-/* --- Dropdowns --- */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 4px;
-}
-
-.dropdown-content a {
-    color: white;
-    padding: 10px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #444;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* --- Hamburger Button --- */
-/* keep original default (hidden on desktop) */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    margin-left: auto;
-}
-
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
-    transition: 0.4s;
-}
-
-/* Force hamburger to show when nav would be hidden (small screens).
-   This line is minimal and will be overridden on desktop by the media query below. */
-.hamburger.force-visible {
-    display: flex !important;
-}
-
-/* --- Nav Links Container --- */
-.nav-links {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.nav-links.active {
-    display: flex;
-}
-
-
